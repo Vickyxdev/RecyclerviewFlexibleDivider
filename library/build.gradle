@@ -40,6 +40,11 @@ dependencies {
 //apply from: 'android-artifacts.gradle'
 //apply from: 'bintray-publish.gradle'
 
+//task copyLibs(type: Copy) {
+////    from configurations.libConfig
+//    into 'libs'
+//}
+
 afterEvaluate {
     publishing {
         publications {
@@ -47,7 +52,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.Vickyxdev'
-                artifactId = 'RecyclerviewFlexibleDivider'
+                artifactId = 'recyclerviewflexibledivider'
                 version = '1.2'
             }
         }
