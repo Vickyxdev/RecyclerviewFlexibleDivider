@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
     useLibrary 'org.apache.http.legacy'
 //    buildToolsVersion BUILD_TOOLS_VERSION
 
