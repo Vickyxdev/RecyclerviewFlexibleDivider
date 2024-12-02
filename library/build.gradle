@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 33
+//    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+}
+
+//android.libraryVariants.all { variant ->
+//    if (variant.buildType.isDebuggable()) {
+//        return; // Skip debug builds.
+//    }
+//    task("javadoc${variant.name.capitalize()}", type: Javadoc) {
+//        description "Generates Javadoc for $variant.name."
+//        source = variant.javaCompile.source
+//        ext.androidJar = System.getenv("ANDROID_HOME") +
+//                "/platforms/${android.compileSdkVersion}/android.jar"
+//        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+//    }
+//
+//    task("bundleJavadoc${variant.name.capitalize()}", type: Jar) {
+//        description "Bundles Javadoc into zip for $variant.name."
+//        classifier = "javadoc"
+//        from tasks["javadoc${variant.name.capitalize()}"]
+//    }
+//}
+//
+//apply from: 'android-artifacts.gradle'
+//apply from: 'bintray-publish.gradle'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.Vickyxdev'
+                artifactId = 'RecyclerviewFlexibleDivider'
+                version = '1.1'
+            }
+        }
+    }
+}
