@@ -1,5 +1,7 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion 33
@@ -7,8 +9,8 @@ android {
 //    buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
@@ -60,7 +62,7 @@ afterEvaluate {
 
                 groupId = 'com.github.Vickyxdev'
                 artifactId = 'recyclerviewflexibledivider'
-                version = '1.4'
+                version = '1.5'
             }
         }
     }
